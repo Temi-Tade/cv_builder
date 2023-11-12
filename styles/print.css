@@ -1,0 +1,12 @@
+body{
+	background-color: #000 !important;
+	-webkit-print-color-adjust: exact !important
+}
+
+button{
+	display: none;
+}
+
+h1{
+	background: red
+}
