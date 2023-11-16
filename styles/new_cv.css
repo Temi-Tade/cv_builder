@@ -27,7 +27,6 @@ input{
 label{
 	display: block;
 	padding: .75rem 0;
-	border: 1px sold;
 }
 
 .field input:not(input[type=checkbox]), select{
@@ -52,4 +51,18 @@ input[type=checkbox]{
 
 input[type=checkbox]:focus{
 	box-shadow: none
+}
+
+.present{
+	display: flex;
+	align-items: center
+}
+
+#submit_btn{
+	padding: .5rem;
+}
+
+#submit_btn button{
+	width: 100%;
+	font-weight: bolder;
 }

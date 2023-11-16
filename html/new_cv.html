@@ -77,11 +77,11 @@
 				<label for="school_start1">When did you start?
 					<input type="month" id="school_start1">
 				</label>
-				<label for="school_stop1">When did you graduate?
+				<label for="school_stop1">When did you leave there?
 					<input type="month" id="school_stop1">
 				</label>
-				<label for="query1">
-					<input type="checkbox" id="query1">Still attending?
+				<label for="school_query1" class="present">
+					<input type="checkbox" id="school_query1">Still attending?
 				</label>
 			</div>
 			
@@ -89,6 +89,65 @@
 				<button id="add_new_edu">Add New</button>
 			</div>
 		</fieldset>
+		
+		<fieldset id="work">
+			<legend>Work History</legend>
+			<div class="field">
+				<input type="text" id="work1" placeholder="work place 1">
+				<label for="work_start1">When did you start working there?
+					<input type="month" id="school_start1">
+				</label>
+				<label for="school_stop1">When did you stop working there?
+					<input type="month" id="work_stop1">
+				</label>
+				<label for="work_query1" class="present">
+					<input type="checkbox" id="work_query1">Still working there?
+				</label>
+			</div>
+			
+			<div class="field new">
+				<button id="add_new_work">Add New</button>
+			</div>
+		</fieldset>
+		
+		<fieldset id="other">
+			<legend>Other Information</legend>
+			<em>NB: If you have more than one of any of these information, write them as a comma-separated list of items</em>
+			<div class="field">
+				<input type="text" id="certs" placeholder="certificates">
+			</div>
+			
+			<div class="field">
+				<input type="text" id="research" placeholder="research papers and publications">
+			</div>
+			
+			<div class="field">
+				<input type="text" id="volunteering" placeholder="volunteering programmes">
+			</div>
+			
+			<div class="field">
+				<input type="text" id="skills" placeholder="skills">
+			</div>
+			
+			<div class="field">
+				<input type="text" id="hobbs" placeholder="hobbies and interests">
+			</div>
+		</fieldset>
+		
+		<fieldset id="referees">
+			<legend>Referees</legend>
+			<div class="field">
+				<input type="text" id="ref1" placeholder="referee 1">
+			</div>
+			
+			<div class="field new">
+				<button id="add_new_ref">Add New</button>
+			</div>
+		</fieldset>
+		
+		<div id="submit_btn">
+			<button type="submit">CREATE CV</button>
+		</div>
 	</form>
 </body>
 
