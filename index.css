@@ -3,7 +3,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	transition: .5s;
-	letter-spacing: .25px
+	letter-spacing: .5px
 }
 
 *:focus{
@@ -19,6 +19,8 @@ html{
 	user-select: none;
 	background: var(--text);
 	accent-color: var(--solid);
+	scroll-behavior: smooth;
+	font-family: "Ubuntu", sans-serif
 }
 
 header{
