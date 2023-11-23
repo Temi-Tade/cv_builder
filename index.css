@@ -85,3 +85,16 @@ input:focus, select:focus{
 #add_new_bio{
 	justify-self: right
 }
+
+#modal{
+	position: fixed;
+	background: var(--solid);
+	color: var(--text);
+	width: 85%;
+	left: 7.5%;
+	box-shadow: 0 0 7px #3333;
+	padding: 1rem;
+	border-radius: .75rem;
+	top: -20rem;
+}
+
