@@ -37,14 +37,13 @@
 			
 			<div class="field">
 				<label for="dob">Date of birth 
-					<input type="date" id="dob">
+					<input type="date" id="dob" placeholder="date of birth">
 				</label>
 			</div>
 			
 			<div class="field">
-				<label for="gndr">Gender
+				<label for="gndr">Select Gender
 					<select id="gndr">
-						<option value="">--select gender--</option>
 						<option value="male">male</option>
 						<option value="female">female</option>
 					</select>
@@ -82,21 +81,25 @@
 		
 		<fieldset id="education">
 			<legend>Education History</legend>
-			<div class="field">
-				<input type="text" id="school1" placeholder="school 1">
-				<label for="school_start1">When did you start?
-					<input type="month" id="school_start1">
-				</label>
-				<label for="school_stop1">When did you leave there?
-					<input type="month" id="school_stop1">
-				</label>
-				<label for="school_query1" class="present">
-					<input type="checkbox" id="school_query1">Still attending?
-				</label>
+			<div id="school_list">
+				<div class="field school">
+					<input type="text" id="school1" placeholder="school name">
+					<label for="school_start1">When did you start?
+						<input type="month" id="school_start1" placeholder="school 1 start date">
+					</label>
+					<label for="school_stop1">When did you leave there?
+						<input type="month" id="school_stop1" placeholder="school 1 stop date">
+					</label>
+					<label for="school_query1" class="present">
+						<input type="checkbox" id="school_query1">Still attending?
+					</label>
+					<hr>
+
+				</div>
 			</div>
 			
 			<div class="field new">
-				<button id="add_new_edu" type="button" class="fa-solid fa-plus-circle">Add</button>
+				<button id="add_new_edu" type="button" class="fa-solid fa-plus-circle" onclick="ADD_NEW_SCHOOL()">Add</button>
 			</div>
 		</fieldset>
 		
@@ -105,10 +108,10 @@
 			<div class="field">
 				<input type="text" id="work1" placeholder="work place 1">
 				<label for="work_start1">When did you start working there?
-					<input type="month" id="school_start1">
+					<input type="month" id="school_start1" placeholder="work 1 start date">
 				</label>
 				<label for="school_stop1">When did you stop working there?
-					<input type="month" id="work_stop1">
+					<input type="month" id="work_stop1" placeholder="work 1 stop date">
 				</label>
 				<label for="work_query1" class="present">
 					<input type="checkbox" id="work_query1">Still working there?

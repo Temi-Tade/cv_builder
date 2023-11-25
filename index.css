@@ -82,10 +82,6 @@ input:focus, select:focus{
 	text-align: center
 }
 
-#add_new_bio{
-	justify-self: right
-}
-
 #modal{
 	position: fixed;
 	background: var(--solid);
@@ -98,3 +94,6 @@ input:focus, select:focus{
 	top: -20rem;
 }
 
+::placeholder{
+	font-family: "Ubuntu", sans-serif
+}

@@ -47,9 +47,13 @@ input[type=month]{
 	appearance: none;
 }
 
-.new{
+.new, .remove{
 	display: flex;
 	justify-content: flex-end
+}
+
+#remove_school{
+	background: #FF0056
 }
 
 input[type=checkbox]{
