@@ -105,21 +105,23 @@
 		
 		<fieldset id="work">
 			<legend>Work History</legend>
-			<div class="field">
-				<input type="text" id="work1" placeholder="work place 1">
-				<label for="work_start1">When did you start working there?
-					<input type="month" id="school_start1" placeholder="work 1 start date">
-				</label>
-				<label for="school_stop1">When did you stop working there?
-					<input type="month" id="work_stop1" placeholder="work 1 stop date">
-				</label>
-				<label for="work_query1" class="present">
-					<input type="checkbox" id="work_query1">Still working there?
-				</label>
+			<div id="work_list">
+				<div class="field">
+					<input type="text" id="work1" placeholder="work place 1">
+					<label for="work_start1">When did you start working there?
+						<input type="month" id="school_start1" placeholder="work 1 start date">
+					</label>
+					<label for="school_stop1">When did you stop working there?
+						<input type="month" id="work_stop1" placeholder="work 1 stop date">
+					</label>
+					<label for="work_query1" class="present">
+						<input type="checkbox" id="work_query1">Still working there?
+					</label>
+				</div>
 			</div>
 			
 			<div class="field new">
-				<button id="add_new_work" type="button" class="fa-solid fa-plus-circle">Add</button>
+				<button id="add_new_work" type="button" class="fa-solid fa-plus-circle" onclick="ADD_NEW_WORK()">Add</button>
 			</div>
 		</fieldset>
 		
@@ -149,12 +151,17 @@
 		
 		<fieldset id="referees">
 			<legend>Referees</legend>
-			<div class="field">
-				<input type="text" id="ref1" placeholder="referee 1">
+			<em>
+				Fill the referee fields in the order of [NAME, EMAIL ADDRESS, PHONE NUMBER. For example - John Doe, johndoe@domain.com, 1234567890
+			</em>
+			<div id="ref_list">
+				<div class="field">
+					<input type="text" id="ref1" placeholder="referee name, email address, phone number">
+				</div>
 			</div>
 			
 			<div class="field new">
-				<button id="add_new_ref" type="button" class="fa-solid fa-plus-circle">add</button>
+				<button id="add_new_ref" type="button" class="fa-solid fa-plus-circle" onclick="ADD_NEW_REF()">add</button>
 			</div>
 		</fieldset>
 		
@@ -165,6 +172,7 @@
 	
 	<script src="../index.js"></script>
 	<script src="../scripts/form.js"></script>
+	<script src="../scripts/oop.js"></script>
 </body>
 
 </html>
