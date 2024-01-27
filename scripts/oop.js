@@ -45,7 +45,7 @@ class Work extends School {
 		document.querySelector("#work_list").innerHTML += `
 			<div class="field work">
 				<input type="text" id="work${this.index}" placeholder="work name">
-				<label for="work_start1">When did you start?
+				<label for="work_start${this.index}">When did you start?
 					<input type="month" id="work_start${this.index}" placeholder="work ${this.index} start date">
 				</label>
 				<label for="work_stop${this.index}">When did you leave there?
@@ -80,9 +80,9 @@ class Referee extends School{
 		this.index += 1
 		document.querySelector("#ref_list").innerHTML += `
 			<div class="field ref">
-				<input type="text" id="school${this.index}" placeholder="referee name, email address, phone number">
+				<input type="text" id="ref${this.index}" placeholder="referee name, email address, phone number">
 			</div>
-			<div class = "field remove">
+			<div class="field remove">
 				<button id='remove_ref' type="button" class="fa-solid fa-trash remove">Remove</button> 
 			</div>
 			<hr>
@@ -95,7 +95,6 @@ class Referee extends School{
 		})
 	}
 }
-
 
 const ADD_NEW_SCHOOL = () => {
 	let school = new School()

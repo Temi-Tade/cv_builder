@@ -3,6 +3,11 @@ form{
 	margin-top: 2rem
 }
 
+button{
+	padding: .75rem;
+	border-radius: .5rem;
+}
+
 fieldset{
 	padding: .75rem;
 	border: .25px solid;
@@ -22,6 +27,7 @@ legend{
 input{
 	border: 1.25px solid;
 	background: transparent;
+	font-size: 1rem;
 }
 
 label{

@@ -3,7 +3,8 @@
 	margin: 0;
 	box-sizing: border-box;
 	transition: .5s;
-	letter-spacing: .5px
+	letter-spacing: .5px;
+	font-family: "Ubuntu", sans-serif;
 }
 
 *:focus{
@@ -26,8 +27,6 @@ html{
 header{
 	padding: .5rem;
 	box-shadow: .5px .75px 1px 1px #7777;
-	position: fixed;
-	top: 0;
 	width: 100%;
 	margin: auto;
 	background: var(--text)
@@ -43,7 +42,6 @@ button{
 	padding: .75rem;
 	font-size: 1rem;
 	border: 0;
-	border-radius: .5rem;
 	cursor: pointer;
 }
 
@@ -58,23 +56,23 @@ input:focus, select:focus{
 
 #add_cv_btn_wrap{
 	position: fixed;
-	padding: 1rem;
+	padding: .25rem;
 	box-shadow: 0 0 1px 1px #7777;
-	width: 4rem;
-	height: 4rem;
 	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	bottom: 2rem;
 	right: 2rem;
-	background: var(--solid);
 }
 
 #add_cv_btn{
-	display: block;
-	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
 	color: var(--text);
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	background: var(--solid);
 }
 
 #cv_list{
