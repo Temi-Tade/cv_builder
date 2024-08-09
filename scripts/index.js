@@ -1,16 +1,24 @@
 const MODAL = document.querySelector("#modal")
-//document.querySelectorAll returns a node list,convert it to an array with JS notation in order to perfrom .some() operation
+const MODBG = document.querySelector("#modbg")
 const INPUTS = [...document.querySelectorAll('input'), document.querySelector("#desc")]
-const FORM = document.querySelector('form')
-let USER_DATA = {
-	fname, lname, oname, dob, gndr, nationality, langs, desc, addr: undefined,
-	mails: [], tels: [], schools: [], works: [], certs: [], research: [], volunteers:[], skills: [], hobbs :[], refs: []
-}
+const FORM = document.querySelector('#cv') 
+let USER_DATA = {}
+let schools = [];
+let works = [];
+let refs = [];
+let CV;
 
 const DISPLAY_MODAL = (text) => {
-	MODAL.style.top = '2.5rem'
+	MODBG.style.display = "block"
 	MODAL.innerHTML = text
-	setTimeout(()=> {
-		MODAL.style.top = '-20rem'
-	}, 3000)
+	window.onclick = (e) => {
+		if (e.target === MODBG) {
+			MODBG.style.display = "none"
+		}
+	}
 }
+
+console.log(USER_DATA);
+
+// fname: undefined, lname: undefined, oname: undefined, dob: undefined, gndr: undefined, nationality: undefined, langs: undefined, desc: undefined, addr: undefined,
+// 	mails: undefined, tels: undefined, schools: [], works: [], certs: undefined, research: undefined, volunteers: undefined, skills: undefined, hobbs: undefined, refs: []

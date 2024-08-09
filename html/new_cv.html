@@ -7,6 +7,7 @@
 	<title>CV BUILDER | Create a new CV</title>
 	<link rel="stylesheet" href="../styles/index.css">
 	<link rel="stylesheet" href="../styles/new_cv.css">
+	<link rel="stylesheet" href="../styles/preview.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -17,32 +18,35 @@
 		<h1>CV_builder</h1>
 	</header>
 	
-	<div id="modal">[modal text]</div>
+	<div id="modbg">
+		<div id="modal">[modal text]</div>
+	</div>
 	
-	<form action="./preview.html" accept-charset="utf-8" autocomplete="off" >
+	<form action="./preview.html" accept-charset="utf-8" autocomplete="off" spellcheck="false" target="_blank" id="cv">
 		<fieldset id="bio">
 			<legend>Personal Information</legend>
 			<div class="field">
-				<input type="text" id="fname" placeholder="first name">
+				<input type="text" id="fname" name="fname" placeholder="first name">
 			</div>
 			
 			<div class="field">
-				<input type="text" id="lname" placeholder="last name">
+				<input type="text" id="lname" name="lname" placeholder="last name">
 			</div>
 			
 			<div class="field">
-				<input type="text" id="oname" placeholder="other name(s)">
+				<input type="text" id="oname" name="oname" placeholder="other name(s)">
 			</div>
 			
 			<div class="field">
 				<label for="dob">Date of birth 
-					<input type="date" id="dob" placeholder="date of birth">
+					<input type="date" id="dob" name="dob" placeholder="date of birth">
 				</label>
 			</div>
 			
 			<div class="field">
 				<label for="gndr">Select Gender
-					<select id="gndr">
+					<select id="gndr" name="gndr">
+						<option value="">--select--</option>
 						<option value="male">male</option>
 						<option value="female">female</option>
 					</select>
@@ -50,15 +54,15 @@
 			</div>
 			
 			<div class="field">
-				<input type="text" id="nationality" placeholder="nationality">
+				<input type="text" id="nationality" name="nationality" placeholder="nationality">
 			</div>
 			
 			<div class="field">
-				<input type="text" id="langs" placeholder="languages spoken">
+				<input type="text" id="langs" name="langs" placeholder="languages spoken">
 			</div>
 			
 			<div class="field">
-				<textarea id="desc" placeholder="a short description of yourself"></textarea>
+				<textarea id="desc" name="desc" placeholder="a short description of yourself"></textarea>
 			</div>
 		</fieldset>
 		
@@ -66,60 +70,53 @@
 			<legend>Contact Information</legend>
 			<em>NB: If you have more than one of any of these information, write them as a comma-separated list of items</em>
 			<div class="field">
-				<input type="email" id="email" placeholder="email address" required>
+				<input type="email" id="email" name="email" placeholder="email address" required>
 			</div>
 			
 			<div class="field">
-				<input type="tel" id="tel" placeholder="phone number">
+				<input type="tel" id="tel" name="tel" placeholder="phone number(s)">
 			</div>
 			
 			<div class="field">
-				<input type="text" id="address" placeholder="home address">
+				<input type="text" id="address" name="address" placeholder="home address">
 			</div>
 		</fieldset>
 		
 		<fieldset id="education">
 			<legend>Education History</legend>
-			<div id="school_list">
-				<div class="field school">
-					<input type="text" id="school1" placeholder="school name">
-					<label for="school_start1">When did you start?
-						<input type="month" id="school_start1" placeholder="school 1 start date">
-					</label>
-					<label for="school_stop1">When did you leave there?
-						<input type="month" id="school_stop1" placeholder="school 1 stop date">
-					</label>
-					<label for="school_query1" class="present">
-						<input type="checkbox" id="school_query1">Still attending?
-					</label>
-					<hr>
-				</div>
-			</div>
-			
+			<h3>Added <span id="school_count">0</span> school(s).</h3>
+
+			<table id="schools">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Start Date</th>
+						<th>Stop Date</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
 			<div class="field new">
-				<button id="add_new_edu" type="button" class="fa-solid fa-plus-circle" onclick="ADD_NEW_SCHOOL()">Add</button>
+				<button id="add_new_edu" type="button" class="fa-solid fa-plus" onclick="ADD_NEW_SCHOOL('', '', '', false)" title="Add New School"></button>
 			</div>
 		</fieldset>
 		
 		<fieldset id="work">
 			<legend>Work History</legend>
-			<div id="work_list">
-				<div class="field">
-					<input type="text" id="work1" placeholder="work place 1">
-					<label for="work_start1">When did you start working there?
-						<input type="month" id="work_start1" placeholder="work 1 start date">
-					</label>
-					<label for="school_stop1">When did you stop working there?
-						<input type="month" id="work_stop1" placeholder="work 1 stop date">
-					</label>
-					<label for="work_query1" class="present">
-						<input type="checkbox" id="work_query1">Still working there?
-					</label>
-				</div>
-			</div>
+			<h3>Added <span id="work_count">0</span> job(s).</h3>
 			
+			<table id="jobs">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Start Date</th>
+						<th>Stop Date</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
 			<div class="field new">
-				<button id="add_new_work" type="button" class="fa-solid fa-plus-circle" onclick="ADD_NEW_WORK()">Add</button>
+				<button id="add_new_work" type="button" class="fa-solid fa-plus" onclick="ADD_NEW_WORK()" title="Add New Work"></button>
 			</div>
 		</fieldset>
 		
@@ -127,39 +124,44 @@
 			<legend>Other Information</legend>
 			<em>NB: If you have more than one of any of these information, write them as a comma-separated list of items</em>
 			<div class="field">
-				<input type="text" id="certs" placeholder="certificates">
+				<input type="text" id="certs" name="certs" placeholder="certificates">
 			</div>
 			
 			<div class="field">
-				<input type="text" id="research" placeholder="research papers and publications">
+				<input type="text" id="research" name="research" placeholder="research papers and publications">
 			</div>
 			
 			<div class="field">
-				<input type="text" id="volunteering" placeholder="volunteering programmes">
+				<input type="text" id="volunteering" name="volunteering" placeholder="volunteering programmes">
 			</div>
 			
 			<div class="field">
-				<input type="text" id="skills" placeholder="skills">
+				<input type="text" id="skills" name="skills" placeholder="skills">
 			</div>
 			
 			<div class="field">
-				<input type="text" id="hobbs" placeholder="hobbies and interests">
+				<input type="text" id="hobbs" name="hobbs" placeholder="hobbies and interests">
 			</div>
 		</fieldset>
 		
 		<fieldset id="referees">
 			<legend>Referees</legend>
-			<em>
-				Fill the referee fields in the order of [NAME, EMAIL ADDRESS, PHONE NUMBER. For example - John Doe, johndoe@domain.com, 1234567890
-			</em>
-			<div id="ref_list">
-				<div class="field">
-					<input type="text" id="ref1" placeholder="referee name, email address, phone number">
-				</div>
-			</div>
+			<h3>Added <span id="ref_count">0</span> referee(s)</h3>
+			
+			<table id="refs">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Occupation</th>
+						<th>Phone</th>
+						<th>Email address</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
 			
 			<div class="field new">
-				<button id="add_new_ref" type="button" class="fa-solid fa-plus-circle" onclick="ADD_NEW_REF()">add</button>
+				<button id="add_new_ref" type="button" class="fa-solid fa-plus" onclick="ADD_NEW_REF()" title="Add New Referee"></button>
 			</div>
 		</fieldset>
 		
@@ -167,10 +169,90 @@
 			<button type="submit" class="fa-regular fa-file">CREATE CV</button>
 		</div>
 	</form>
+
+	<section id="preview">
+		<div id="page">
+			<h1 id="user_name" class="fname oname lname">{user_name}</h1>
+			<div id="user_gndr_wrap">
+				<span id="user_gndr"></span>
+			</div>
+
+			<section id="user_description">
+				<h3 class="section_header">About me</h3>
+				<hr>
+				<p id="user_desc"></p>
+			</section>
+	
+			<section id="user_bio">
+				<h3 class="section_header">Bio Data</h3>
+				<hr>
+				<table id="user_bio_data"></table>
+			</section>
+	
+			<section id="contact_info">
+				<h3 class="section_header">Contact Infomation</h3>
+				<hr>
+				<table id="user_contact_info"></table>
+			</section>
+	
+			<section id="education_history">
+				<h3 class="section_header">Education History</h3>
+				<hr>
+				<table id="user_education_history">
+					<tr>
+						<th>School Name</th>
+						<th>Date Joined</th>
+						<th>Graduation Date</th>
+					</tr>
+				</table>
+			</section>
+	
+			<section id="work_history">
+				<h3 class="section_header">Work History</h3>
+				<hr>
+				<table id="user_work_history">
+					<tr>
+						<th>Job Title</th>
+						<th>Date Started</th>
+						<th>Date Ended</th>
+					</tr>
+				</table>
+			</section>
+	
+			<section id="other_info">
+				<h3 class="section_header">Other Infomation</h3>
+				<h4>Certficiates</h4>
+				<ul id="cert-list"></ul>
+				<hr>
+				<h4>Research papers and Publications</h4>
+				<ul id="research-list"></ul>
+				<hr>
+				<h4>Volunteering Programmes</h4>
+				<ul id="vol-list"></ul>
+				<h4>Skills</h4>
+				<ul id="skill-list"></ul>
+				<h4>Hobbies and Interest</h4>
+				
+			</section>
+	
+			<section id="referee_info">
+				<h3 class="section_header">Referees</h3>
+				<ul id="ref-list"></ul>
+				<hr>
+			</section>
+		</div>
+
+		<div id="print_btn_wrap">
+			<button type="button" id="print_btn">Print cv</button>
+		</div>
+	</section>
 	
 	<script src="../scripts/index.js"></script>
 	<script src="../scripts/form.js"></script>
-	<script src="../scripts/oop.js"></script>
+	<script src="../scripts/app.js"></script>
+	<script src="../scripts/edit.js"></script>
+	<script src="../scripts/delete.js"></script>
+	<script src="../scripts/main.js"></script>
 </body>
 
 </html>

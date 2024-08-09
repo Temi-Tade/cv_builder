@@ -1,0 +1,70 @@
+h1{
+    padding: 0;
+    padding-bottom: .75rem;
+}
+
+hr{
+    border: .25px solid;
+    color: #777;
+}
+
+section{
+    padding: .5rem;
+}
+
+.section_header{
+    padding: .5rem 0;
+}
+
+#preview{
+    display: none;
+    margin-top: 5rem;
+}
+
+#user_name{
+    font-size: 2.75rem;
+    text-align: center;
+}
+
+#user_desc{
+    text-align: center;
+    padding: .5rem;
+    font-style: italic;
+    font-size: 1.125rem;
+}
+
+#user_gndr_wrap{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#user_gndr{
+    padding-right: .5rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+#preview th{
+    padding: .5rem;
+    text-align: left; 
+}
+
+#preview td{
+    padding: .5rem;
+    text-align: left;
+}
+
+#preview tr{
+    padding: .5rem;
+    border: 1px solid;
+}
+
+#print_btn_wrap{
+    padding: .75rem .25rem;
+}
+
+#print_btn{
+    text-transform: uppercase;
+    display: block;
+    margin: auto;
+}
